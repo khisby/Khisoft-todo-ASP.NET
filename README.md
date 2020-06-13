@@ -8,3 +8,5 @@ Khisoft-todo-ASP.NET adalah untuk menjawab tugas yang diberikan pada matakuliah 
 
 1. Introduce ASP .NET Framework
 2. Introduce SQL Server
+
+Link Tutorial Bisa dilihat di Youtube : https://www.youtube.com/watch?v=eLRmprLUrtQ&t=570s
