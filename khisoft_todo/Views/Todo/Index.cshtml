@@ -1,0 +1,59 @@
+﻿@model IEnumerable<khisoft_todo.Models.todo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1>Khisoft Todo</h1>
+    <p class="lead">Hallo, Tulis Kegiatanmu disini.</p>
+</div>
+
+<p>
+    @Html.ActionLink("Tambahkan Listmu disini", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            List Pekerjaan
+        </th>
+        <th>
+            Tenggat Waktu
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Aksi
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.task)
+        </td>
+        <td>
+            @if(item.deadline != null){
+                @item.deadline.ToString("yyyy-MM-dd")
+            }
+        </td>
+        <td>
+
+            @if(item.status == 0)
+            {
+              @Html.ActionLink("Ubah Ke Selesai", "Edit", new { id = item.id })
+            }
+            else
+            {
+                <p>Sudah Selesai</p>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Hapus List", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
